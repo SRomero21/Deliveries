@@ -1,6 +1,6 @@
 <h1 align="center">DELIVERIES</h1>
 <p align="center">
-  Proyecto de una empresa de eliveries.
+  Proyecto de una empresa de deliveries.
 </p>
 <h1></h1>
 <h2 align="center">Herramientas</h2>
