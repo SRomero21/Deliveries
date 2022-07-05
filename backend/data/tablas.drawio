@@ -1,11 +1,11 @@
 <mxfile host="65bd71144e">
     <diagram id="TwqEHlXyz-T0GQaUkwLv" name="users">
-        <mxGraphModel dx="1110" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="293" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="2" value="users" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
-                    <mxGeometry x="314" y="190" width="200" height="450" as="geometry"/>
+                    <mxGeometry x="390" y="60" width="200" height="450" as="geometry"/>
                 </mxCell>
                 <mxCell id="3" value="id_user" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" parent="2" vertex="1">
                     <mxGeometry y="30" width="200" height="30" as="geometry"/>
@@ -52,8 +52,8 @@
             </root>
         </mxGraphModel>
     </diagram>
-    <diagram name="Products" id="J0vgvxfZZCixbBeC4TnS">
-        <mxGraphModel dx="1110" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <diagram name="products" id="J0vgvxfZZCixbBeC4TnS">
+        <mxGraphModel dx="230" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="jhzp4ABi9KNPk_GAH-yt-0"/>
                 <mxCell id="jhzp4ABi9KNPk_GAH-yt-1" parent="jhzp4ABi9KNPk_GAH-yt-0"/>
@@ -85,7 +85,7 @@
         </mxGraphModel>
     </diagram>
     <diagram name="orders" id="rhVkviDi0sDywoXgT54s">
-        <mxGraphModel dx="1110" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="230" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="dOpGE1fQpx9OrAc0WH1W-0"/>
                 <mxCell id="dOpGE1fQpx9OrAc0WH1W-1" parent="dOpGE1fQpx9OrAc0WH1W-0"/>
