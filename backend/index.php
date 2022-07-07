@@ -3,8 +3,8 @@
    ** Mostrar errores
   ********************************/
   ini_set('display_errors', 1);
-  ini_set('php_log_errors', 1);
-  ini_set('php_error_log', "C:/xampp/htdocs/Deliveries/backend");
+  ini_set('log_errors', 1);
+  ini_set('error_log', "C:/xampp/htdocs/Deliveries/backend");
   /*******************************
   ** Requerimientos
   ********************************/
