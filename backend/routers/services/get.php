@@ -7,10 +7,10 @@
   $startAt=$_GET["startAt"]?? null;
   $endAt=$_GET["endAt"]?? null;
   $response = new GetController();
+  /*******************************
+  ** Petición get con filtro
+  ********************************/
   if(isset($_GET["linkTo"])&& isset($_GET["equalTo"]) && !isset($_GET["linkTo"]) && !isset($_GET["equalTo"])){
-    /*******************************
-    ** Petición get con filtro
-    ********************************/
     $response -> getDataFilter($table, $select, $_GET["linkTo"], $_GET["equalTo"], $orderBy, $orderMode, $startAt, $endAt);
   }else
   /************************************************************
@@ -24,11 +24,22 @@
   *************************************************************/
   if(isset($_GET["rel"]) && isset($_GET["type"]) && $table=="relations" && isset($_GET["linkTo"]) && isset($_GET["equalTo"])){
     $response -> getRelDataFilter($_GET["rel"], $_GET["type"], $select, $_GET["linkTo"], $_GET["equalTo"], $orderBy, $orderMode, $startAt, $endAt);
+  }else
+  /****************************************************
+  ** Peticiones Get para buscadores sin relaciones
+  *****************************************************/
+  if(!isset($_GET["rel"]) && !isset($_GET["type"]) && isset($_GET["linkTo"]) && isset($_GET["searchTo"])) {
+    $response->getDataFilter($table, $select, $_GET["linkTo"], $_GET["searchTo"], $orderBy, $orderMode, $startAt, $endAt);
+  }else
+  /************************************************************
+   ** Peticiones Get para buscadores entre tablas relacionadas.
+   *************************************************************/
+  if (isset($_GET["rel"]) && isset($_GET["type"]) && $table == "relations" && isset($_GET["linkTo"]) && isset($_GET["searchTo"])) {
+    $response->getRelDataFilter($_GET["rel"], $_GET["type"], $select, $_GET["linkTo"], $_GET["searchTo"], $orderBy, $orderMode, $startAt, $endAt);
   }else{
-    /*******************************
-    ** Petición GET sin filtro
-    ********************************/
+  /*******************************
+  ** Petición GET sin filtro
+  ********************************/
     $response -> getData($table, $select, $orderBy, $orderMode, $startAt, $endAt);
   }
-
 ?>

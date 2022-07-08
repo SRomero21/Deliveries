@@ -1,6 +1,6 @@
 <h1 align="center">Api Rest Full </h1>
 <p align="center">
-Creación de una Api REST FULL completa con PHP nativo de manera dinámica y con base de datos en MySql.
+Creación de una Api Rest Full completa con PHP nativo de manera dinámica y con base de datos en MySql.
 </p>
 <h1></h1>
 <h2 align="center">Herramientas</h2>
