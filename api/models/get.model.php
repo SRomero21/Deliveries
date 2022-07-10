@@ -6,9 +6,9 @@
      ********************************/
       static public function getData($table, $select,
         $orderBy,$orderMode, $startAt, $endAt){
-        /************************************
-         *? Validar exigencia de la tabla
-         ************************************/
+        /***********************************************
+         *? Validar exigencia de la tabla y columnas
+         ***********************************************/
           $selectArray = explode(",", $select);
           if (empty(Connection::getColumnsData($table, $selectArray))) {
             return null;
@@ -66,10 +66,15 @@
         $linkTo, $equalTo, $orderBy, $orderMode,
         $startAt, $endAt){
         /************************************
+         *? Armado de variables
+         ************************************/
+          $selectArray = explode(",", $select);
+          $linkToArray = explode(",",$linkTo);
+          $equalToArray = explode("_",$equalTo);
+          $linkToText="";
+        /************************************
          *? validar exigencia de la tabla
          ************************************/
-          $linkToArray = explode(",",$linkTo);
-          $selectArray = explode(",", $select);
           foreach($linkToArray as $key => $value){
             array_push($selectArray, $value);
           }
@@ -77,8 +82,9 @@
           if (empty(Connection::getColumnsData($table, $selectArray))){
             return null;
           }
-          $equalToArray = explode("_",$equalTo);
-          $linkToText="";
+        /************************************
+         *? Armado del multi filtro
+         ************************************/
           if(count($linkToArray)>1){
             foreach ($linkToArray as $key => $value) {
               if($key >0){
@@ -146,7 +152,7 @@
           return $stmt->fetchAll(PDO::FETCH_CLASS);
       }
     /************************************************************
-     ** Peticiones Get sin filtros entre tablas relacionadas.
+     ** Peticiones Get con tablas relacionadas.
     *************************************************************/
       static public function getRelData($rel, $type,
         $select, $orderBy, $orderMode, $startAt, $endAt){
@@ -173,23 +179,20 @@
             /***********************************
              *? Con tablas relacionadas.
              ***********************************/
-              if($orderBy==null && $orderMode==null
-                && $startAt==null && $endAt==null){
                 $sql="SELECT $select FROM $relToArray[0] $innerJoinToText";
-              }
             /****************************************
              *? Con tablas relacionas con orden
              ****************************************/
               if($orderBy!=null && $orderMode!=null
-              && $startAt==null && $endAt==null){
+                && $startAt==null && $endAt==null){
                 $sql="SELECT $select FROM $relToArray[0] $innerJoinToText
                       ORDER BY $orderBy $orderMode";
               }
             /****************************************
              *? Con tablas relacionas con limites
              ****************************************/
-              if($orderBy==null && $orderMode==null
-              && $startAt!=null && $endAt!=null){
+              if ($orderBy==null && $orderMode==null
+                && $startAt!=null && $endAt!=null) {
                 $sql="SELECT $select FROM $relToArray[0] $innerJoinToText
                       LIMIT $startAt, $endAt";
               }
@@ -197,7 +200,7 @@
              *? Con tablas relacionas con orden con limites
              ***************************************************/
               if ($orderBy!=null && $orderMode!=null
-                  && $startAt!=null && $endAt!=null) {
+                && $startAt!=null && $endAt!=null){
                 $sql="SELECT $select FROM $relToArray[0] $innerJoinToText
                       ORDER BY $orderBy $orderMode
                       LIMIT $startAt, $endAt";
@@ -209,9 +212,9 @@
             /********************************
              *? Ejecutar sentencia sql.
              ********************************/
-              try {
+              try{
                 $stmt->execute();
-              } catch (PDOException $Exception) {
+              }catch(PDOException $Exception) {
                 return null;
               }
             /********************************
@@ -226,75 +229,101 @@
           }
     }
     /************************************************************
-     ** Peticiones Get con filtros en tablas relacionadas.
+     ** Peticiones Get cn tablas relacionadas con filtros .
     *************************************************************/
-    static public function getRelDataFilter($rel, $type, $select, $linkTo, $equalTo, $orderBy, $orderMode, $startAt, $endAt){
-      /*******************************
-      *? Organización de relaciones
-      ********************************/
-      $relToArray = explode(",", $rel);
-      $typeToArray = explode(",", $type);
-      $innerJoinToText="";
-      if (count($relToArray) > 1) {
-        foreach ($relToArray as $key => $value) {
-          /***********************************
-           ** validar exigencia de la tabla
-          ************************************/
-          if (empty(Connection::getColumnsData($value))) {
-            return null;
-          }
-          if ($key > 0) {
-            $innerJoinToText.="INNER JOIN ".$value." ON ".$relToArray[0].".id_".$typeToArray[$key]."_".$typeToArray[0]." = ".$value.".id_".$typeToArray[$key]." ";
-          }
-        }
-        /*******************************
-        *? Organización de filtros
-        ********************************/
+    static public function getRelDataFilter($rel, $type, $select,
+      $linkTo, $equalTo, $orderBy, $orderMode, $startAt, $endAt){
+      /********************************
+       *? Armado de variables.
+       ********************************/
+        $relToArray = explode(",", $rel);
+        $typeToArray = explode(",", $type);
+        $innerJoinToText="";
         $linkToArray = explode(",", $linkTo);
         $equalToArray = explode("_", $equalTo);
         $filterToText = "";
-        if (count($linkToArray) > 1) {
-          foreach ($linkToArray as $key => $value) {
-            if ($key > 0) {
-              $filterToText.="AND ".$value."=:".$value." ";
+      /***********************************
+       *? Validar si mas una tablas.
+       ***********************************/
+        if (count($relToArray) > 1) {
+          /********************************
+           *? Armado del Inner Join.
+          ********************************/
+            foreach ($relToArray as $key => $value) {
+              if ($key > 0) {
+                $innerJoinToText.="INNER JOIN ".$value." ON "
+                                    .$relToArray[0].".id_".$typeToArray[$key]."_".$typeToArray[0]
+                                    ." = ".$value.".id_".$typeToArray[$key]." ";
+              }
             }
-          }
+          /*******************************
+           *? Organización de filtros
+          ********************************/
+            if (count($linkToArray) > 1) {
+              foreach ($linkToArray as $key => $value) {
+                if ($key > 0) {
+                  $filterToText.="AND ".$value."=:".$value." ";
+                }
+              }
+            }
+          /********************************************
+           *? Con tablas relacionadas con filtro.
+          ********************************************/
+            $sql="SELECT $select FROM $relToArray[0] $innerJoinToText
+                  WHERE $linkToArray[0]=:$linkToArray[0] $filterToText";
+          /*******************************************************
+           *? Con tablas relacionadas con filtro con orden.
+          *******************************************************/
+            if($orderBy!=null && $orderMode!=null && $startAt==null && $endAt==null){
+              $sql="SELECT $select FROM $relToArray[0] $innerJoinToText
+                    WHERE $linkToArray[0]=:$linkToArray[0] $filterToText
+                    ORDER BY $orderBy $orderMode";
+            }
+          /************************************************************
+           *? Con tablas relacionadas con filtro con limites.
+          ************************************************************/
+            if ($orderBy==null && $orderMode==null && $startAt!=null && $endAt!=null) {
+              $sql="SELECT $select FROM $relToArray[0] $innerJoinToText
+                    WHERE $linkToArray[0]=:$linkToArray[0] $filterToText
+                    LIMIT $startAt, $endAt";
+            }
+          /************************************************************************
+           *? Con tablas relacionadas con filtro con orden con limites
+          ************************************************************************/
+            if ($orderBy!=null && $orderMode!=null && $startAt!=null && $endAt!=null) {
+              $sql="SELECT $select FROM $relToArray[0] $innerJoinToText
+                    WHERE $linkToArray[0]=:$linkToArray[0] $filterToText
+                    ORDER BY $orderBy $orderMode
+                    LIMIT $startAt, $endAt";
+            }
+          /********************************
+           *? Contención con sql
+           ********************************/
+            $stmt = Connection::connect()->prepare($sql);
+          /********************************
+           *? Armado los parámetros.
+           ********************************/
+            foreach ($linkToArray as $key => $value){
+              $stmt->bindParam(":".$value,$equalToArray[$key],PDO::PARAM_STR);
+            }
+          /********************************
+           *? Ejecutar sentencia sql.
+           ********************************/
+            try {
+              $stmt->execute();
+            } catch (PDOException $Exception) {
+              return null;
+            }
+          /********************************
+           *? Retorno del getRelData.
+           ********************************/
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+        }else{
+          /*********************************************
+           *? Retorno null si solo hay una tabla.
+          *********************************************/
+            return null;
         }
-        /***********************************
-        *? Sin limitar ni ordenar datos
-        **********************************/
-        $sql="SELECT $select FROM $relToArray[0] $innerJoinToText WHERE $linkToArray[0]=:$linkToArray[0] $filterToText";
-        /*********************************
-        *? Ordenar datos sin limitar
-        **********************************/
-        if($orderBy!=null && $orderMode!=null && $startAt==null && $endAt==null){
-          $sql="SELECT $select FROM $relToArray[0] $innerJoinToText WHERE $linkToArray[0]=:$linkToArray[0] $filterToText ORDER BY $orderBy $orderMode";
-        }
-        /*********************************
-        *? Ordenar y limitar datos
-        **********************************/
-        if ($orderBy!=null && $orderMode!=null && $startAt!=null && $endAt!=null) {
-          $sql="SELECT $select FROM $relToArray[0] $innerJoinToText WHERE $linkToArray[0]=:$linkToArray[0] $filterToText ORDER BY $orderBy $orderMode LIMIT $startAt, $endAt";
-        }
-        /*******************************
-        *? limitar datos sin ordenar
-        ********************************/
-        if ($orderBy==null && $orderMode==null && $startAt!=null && $endAt!=null) {
-          $sql="SELECT $select FROM $relToArray[0] $innerJoinToText WHERE $linkToArray[0]=:$linkToArray[0] $filterToText LIMIT $startAt, $endAt";
-        }
-        $stmt = Connection::connect()->prepare($sql);
-        foreach ($linkToArray as $key => $value){
-          $stmt->bindParam(":".$value,$equalToArray[$key],PDO::PARAM_STR);
-        }
-      try {
-        $stmt->execute();
-      } catch (PDOException $Exception) {
-        return null;
-      }
-        return $stmt->fetchAll(PDO::FETCH_CLASS);
-      }else{
-        return null;
-      }
     }
     /*******************************************************
     ** Peticiones Get para buscadores sin relaciones.

@@ -5,3 +5,78 @@ Stack trace:
 #2 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
 #3 {main}
   thrown in C:\xampp\htdocs\Deliveries\api\routers\services\get.php on line 23
+[10-Jul-2022 18:46:35 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "{" in C:\xampp\htdocs\Deliveries\api\routers\services\get.php on line 111
+[10-Jul-2022 19:15:34 Europe/Berlin] PHP Parse error:  syntax error, unexpected identifier "JOIN" in C:\xampp\htdocs\Deliveries\api\models\get.model.php on line 186
+[10-Jul-2022 20:13:57 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "&&" in C:\xampp\htdocs\Deliveries\api\routers\services\get.php on line 28
+[10-Jul-2022 20:33:07 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_push(): Argument #1 ($array) must be of type array, null given in C:\xampp\htdocs\Deliveries\api\models\get.model.php:169
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\get.model.php(169): array_push(NULL, 'product')
+#1 C:\xampp\htdocs\Deliveries\api\controllers\get.controller.php(29): GetModel::getRelData('products,users', 'product,user', '*', 'Id_product', 'desc', NULL, NULL)
+#2 C:\xampp\htdocs\Deliveries\api\routers\services\get.php(120): GetController::getRelData('products,users', 'product,user', '*', 'Id_product', 'desc', NULL, NULL)
+#3 C:\xampp\htdocs\Deliveries\api\routers\router.php(25): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\get.model.php on line 169
+[10-Jul-2022 20:33:08 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_push(): Argument #1 ($array) must be of type array, null given in C:\xampp\htdocs\Deliveries\api\models\get.model.php:169
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\get.model.php(169): array_push(NULL, 'product')
+#1 C:\xampp\htdocs\Deliveries\api\controllers\get.controller.php(29): GetModel::getRelData('products,users', 'product,user', '*', 'Id_product', 'desc', NULL, NULL)
+#2 C:\xampp\htdocs\Deliveries\api\routers\services\get.php(120): GetController::getRelData('products,users', 'product,user', '*', 'Id_product', 'desc', NULL, NULL)
+#3 C:\xampp\htdocs\Deliveries\api\routers\router.php(25): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\get.model.php on line 169
+[10-Jul-2022 20:33:33 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_shift(): Argument #1 ($array) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:52
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(52): array_shift('*')
+#1 C:\xampp\htdocs\Deliveries\api\models\get.model.php(174): Connection::getColumnsData('products', '*')
+#2 C:\xampp\htdocs\Deliveries\api\controllers\get.controller.php(29): GetModel::getRelData('products,users', 'product,user', '*', 'Id_product', 'desc', NULL, NULL)
+#3 C:\xampp\htdocs\Deliveries\api\routers\services\get.php(120): GetController::getRelData('products,users', 'product,user', '*', 'Id_product', 'desc', NULL, NULL)
+#4 C:\xampp\htdocs\Deliveries\api\routers\router.php(25): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#7 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 52
+[10-Jul-2022 20:33:34 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_shift(): Argument #1 ($array) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:52
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(52): array_shift('*')
+#1 C:\xampp\htdocs\Deliveries\api\models\get.model.php(174): Connection::getColumnsData('products', '*')
+#2 C:\xampp\htdocs\Deliveries\api\controllers\get.controller.php(29): GetModel::getRelData('products,users', 'product,user', '*', 'Id_product', 'desc', NULL, NULL)
+#3 C:\xampp\htdocs\Deliveries\api\routers\services\get.php(120): GetController::getRelData('products,users', 'product,user', '*', 'Id_product', 'desc', NULL, NULL)
+#4 C:\xampp\htdocs\Deliveries\api\routers\router.php(25): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#7 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 52
+[10-Jul-2022 20:44:06 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Connection::getColumnsData(), 1 passed in C:\xampp\htdocs\Deliveries\api\models\get.model.php on line 259 and exactly 2 expected in C:\xampp\htdocs\Deliveries\api\models\connection.php:29
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\get.model.php(259): Connection::getColumnsData('products')
+#1 C:\xampp\htdocs\Deliveries\api\controllers\get.controller.php(40): GetModel::getRelDataFilter('products,users', 'product,user', '*', 'ick_user', 'dcdev', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Deliveries\api\routers\services\get.php(152): GetController::getRelDataFilter('products,users', 'product,user', '*', 'ick_user', 'dcdev', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Deliveries\api\routers\router.php(25): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 29
+[10-Jul-2022 20:44:43 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Connection::getColumnsData(), 1 passed in C:\xampp\htdocs\Deliveries\api\models\get.model.php on line 259 and exactly 2 expected in C:\xampp\htdocs\Deliveries\api\models\connection.php:29
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\get.model.php(259): Connection::getColumnsData('products')
+#1 C:\xampp\htdocs\Deliveries\api\controllers\get.controller.php(40): GetModel::getRelDataFilter('products,users', 'product,user', '*', 'ick_user', 'dcdev', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Deliveries\api\routers\services\get.php(152): GetController::getRelDataFilter('products,users', 'product,user', '*', 'ick_user', 'dcdev', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Deliveries\api\routers\router.php(25): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 29
+[10-Jul-2022 20:47:44 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Connection::getColumnsData(), 1 passed in C:\xampp\htdocs\Deliveries\api\models\get.model.php on line 247 and exactly 2 expected in C:\xampp\htdocs\Deliveries\api\models\connection.php:29
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\get.model.php(247): Connection::getColumnsData('products')
+#1 C:\xampp\htdocs\Deliveries\api\controllers\get.controller.php(40): GetModel::getRelDataFilter('products,users', 'product,user', '*', 'ick_user', 'dcdev', NULL, NULL, NULL, NULL)
+#2 C:\xampp\htdocs\Deliveries\api\routers\services\get.php(152): GetController::getRelDataFilter('products,users', 'product,user', '*', 'ick_user', 'dcdev', NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\Deliveries\api\routers\router.php(25): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 29
