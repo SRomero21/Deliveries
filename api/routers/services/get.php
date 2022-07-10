@@ -1,21 +1,29 @@
 <?php
-  require_once "controllers/get.controller.php";
-  $table= explode("?",$arrayRouters[2])[0];
-  $select=$_GET["select"]?? "*";
-  $orderBy=$_GET["orderBy"]?? null;
-  $orderMode=$_GET["orderMode"]?? null;
-  $startAt=$_GET["startAt"]?? null;
-  $endAt=$_GET["endAt"]?? null;
-  $filterTo=$_GET["filterTo"]?? null;
-  $inTo=$_GET["inTo"]?? null;
-  //$linkTo=$_GET["linkTo"]?? null;
-  //$equalTo=$_GET["equalTo"]?? null;
-  $response = new GetController();
-  /***************************************
-  *! Sin filtro
-  ****************************************/
-    /***************************************
-    ** Petición GET
+  /****************************************
+   * Petición GET.
+   ****************************************/
+    /****************************************
+     *! Requerimientos.
+    ****************************************/
+      require_once "controllers/get.controller.php";
+    /****************************************
+     *? Variables.
+    ****************************************/
+      $table= explode("?",$arrayRouters[2])[0];
+      $select=$_GET["select"]?? "*";
+      $orderBy=$_GET["orderBy"]?? null;
+      $orderMode=$_GET["orderMode"]?? null;
+      $startAt=$_GET["startAt"]?? null;
+      $endAt=$_GET["endAt"]?? null;
+      $linkTo=$_GET["linkTo"]?? null;
+      $inTo=$_GET["inTo"]?? null;
+      $equalTo=$_GET["equalTo"]?? null;
+      $filterTo=$_GET["filterTo"]?? null;
+      $betweenIn=$_GET["betweenIn"]?? null;
+      $betweenOut=$_GET["betweenOut"]?? null;
+      $response = new GetController();
+    /****************************************
+     ** 01) Con select
     ****************************************/
       if (!isset($_GET["orderBy"]) && !isset($_GET["orderMode"])
         && !isset($_GET["startAt"]) && !isset($_GET["endAt"])
@@ -23,39 +31,36 @@
         $response -> getData($table, $select, $orderBy,
             $orderMode, $startAt, $endAt);
       } else
-    /***************************************
-    ** Petición GET con orden
-    ****************************************/
+    /********************************************
+     ** 02) Con select con orden
+    ********************************************/
       if (isset($_GET["orderBy"]) && isset($_GET["orderMode"])
         && !isset($_GET["startAt"]) && !isset($_GET["endAt"])
         && !isset($_GET["linkTo"]) && !isset($_GET["equalTo"])) {
         $response->getData($table, $select,$_GET["orderBy"],
             $_GET["orderMode"], $startAt, $endAt);
       }else
-    /***************************************
-     ** Petición GET con limites
-    ****************************************/
+    /********************************************
+     ** 03) Con select con limites
+    ********************************************/
       if (!isset($_GET["orderBy"]) && !isset($_GET["orderMode"])
         && isset($_GET["startAt"]) && isset($_GET["endAt"])
         && !isset($_GET["linkTo"]) && !isset($_GET["equalTo"])) {
         $response->getData($table, $select, $orderBy, $orderMode,
             $_GET["startAt"], $_GET["endAt"]);
       }else
-    /***************************************
-     ** Petición GET con orden con limites
-    ****************************************/
-      if (isset($_GET["orderBy"]) && isset($_GET["orderMode"])
-        && isset($_GET["startAt"]) && isset($_GET["endAt"])
-        && !isset($_GET["linkTo"]) && !isset($_GET["equalTo"])) {
-        $response->getData($table, $select, $_GET["orderBy"],
-            $_GET["orderMode"], $_GET["startAt"], $_GET["endAt"]);
-      }else
-  /*******************************
-  *! Con filtro
-  ********************************/
-    /***************************************************
-    ** Petición GET con filtro.
-    ****************************************************/
+    /*******************************************
+     ** 04) Con select con orden con limites
+    ********************************************/
+        if (isset($_GET["orderBy"]) && isset($_GET["orderMode"])
+          && isset($_GET["startAt"]) && isset($_GET["endAt"])
+          && !isset($_GET["linkTo"]) && !isset($_GET["equalTo"])) {
+          $response->getData($table, $select, $_GET["orderBy"],
+              $_GET["orderMode"], $_GET["startAt"], $_GET["endAt"]);
+        }else
+    /****************************************************
+     ** 05) Con select con filtro.
+     ****************************************************/
       if(isset($_GET["linkTo"]) && isset($_GET["equalTo"])
         && !isset ($_GET["orderBy"]) && !isset($_GET["orderMode"])
         && !isset($_GET["startAt"]) && !isset($_GET["endAt"])){
@@ -63,9 +68,9 @@
             $_GET["linkTo"], $_GET["equalTo"],
             $orderBy, $orderMode, $startAt, $endAt);
       }else
-    /****************************************************
-    ** Petición GET con filtro con orden.
-    *****************************************************/
+    /*****************************************************
+     ** 06) Con select con filtro con orden.
+     *****************************************************/
       if(isset($_GET["linkTo"]) && isset($_GET["equalTo"])
         && isset($_GET["orderBy"]) && isset($_GET["orderMode"])
         && !isset($_GET["startAt"]) && !isset($_GET["endAt"])){
@@ -74,9 +79,9 @@
             $_GET["orderBy"],$_GET["orderMode"],
             $startAt, $endAt);
       }else
-    /****************************************************
-    ** Petición GET con filtro con limites.
-    *****************************************************/
+    /*****************************************************
+     ** 07) Con select con filtro con limites.
+     *****************************************************/
       if(isset($_GET["linkTo"]) && isset($_GET["equalTo"])
         && !isset($_GET["orderBy"]) && !isset($_GET["orderMode"])
         && isset($_GET["startAt"]) && isset($_GET["endAt"])){
@@ -85,9 +90,9 @@
             $orderBy, $orderMode,
             $_GET["startAt"], $_GET["endAt"]);
       }else
-    /******************************************************
-     ** Petición GET con filtro con orden con limites.
-    ******************************************************/
+    /*******************************************************
+     ** 08) Con select con filtro con orden con limites.
+     *******************************************************/
       if (isset($_GET["linkTo"]) && isset($_GET["equalTo"])
         && isset($_GET["orderBy"]) && isset($_GET["orderMode"])
         && isset($_GET["startAt"]) && isset($_GET["endAt"])) {
@@ -96,21 +101,18 @@
             $_GET["orderBy"], $_GET["orderMode"],
             $_GET["startAt"], $_GET["endAt"]);
       }else
-  /************************************************************
-  *! Con tablas relacionadas.
-  *************************************************************/
-    /************************************************************
-    ** Petición GET sin filtros entre tablas relacionadas.
-    *************************************************************/
+    /*************************************************************
+     ** 09) Con select con tablas relacionadas.
+     *************************************************************/
       if(isset($_GET["rel"]) && isset($_GET["type"])
         && $table=="relations" && !isset($_GET["linkTo"])
         && !isset($_GET["equalTo"])){
         $response -> getRelData($_GET["rel"], $_GET["type"],
             $select, $orderBy, $orderMode, $startAt, $endAt);
       }else
-    /************************************************************
-    ** Petición GET con filtros entre tablas relacionadas.
-    *************************************************************/
+    /*************************************************************
+     ** 10) Con select con tablas relacionadas con filtro.
+     *************************************************************/
       if(isset($_GET["rel"]) && isset($_GET["type"])
         && $table=="relations" && isset($_GET["linkTo"])
         && isset($_GET["equalTo"])){
@@ -118,21 +120,18 @@
           $select, $_GET["linkTo"], $_GET["equalTo"],
           $orderBy, $orderMode, $startAt, $endAt);
       }else
-  /****************************************************
-  *! Con buscadores
-  *****************************************************/
-    /****************************************************
-    ** Peticiones Get para buscadores sin relaciones
-    *****************************************************/
+    /*****************************************************
+     ** 11) Con select con buscador
+     *****************************************************/
       if(!isset($_GET["rel"]) && !isset($_GET["type"])
         && isset($_GET["linkTo"]) && isset($_GET["searchTo"])) {
         $response->getDataFilter($table, $select,
             $_GET["linkTo"], $_GET["searchTo"],
             $orderBy, $orderMode, $startAt, $endAt);
       }else
-    /**************************************************************
-    ** Peticiones Get para buscadores entre tablas relacionadas.
-    ***************************************************************/
+    /***************************************************************
+     ** 12) Con select con buscador con tablas relacionadas.
+     ***************************************************************/
       if (isset($_GET["rel"]) && isset($_GET["type"])
         && $table == "relations" && isset($_GET["linkTo"])
         && isset($_GET["searchTo"])) {
@@ -140,12 +139,9 @@
             $select, $_GET["linkTo"], $_GET["searchTo"],
             $orderBy, $orderMode, $startAt, $endAt);
       }else
-  /************************************************************
-  *! Con rangos.
-  *************************************************************/
-    /************************************************************
-    ** Peticiones Get para selección de rangos.
-    *************************************************************/
+    /*************************************************************
+     ** 13) Con select con rangos.
+     *************************************************************/
       if (!isset($_GET["rel"]) && !isset($_GET["type"])
         && isset($_GET["linkTo"]) && isset($_GET["betweenIn"])
         && isset($_GET["betweenOut"])) {
@@ -154,9 +150,9 @@
             $_GET["betweenOut"], $orderBy,
             $orderMode, $startAt, $endAt, $filterTo, $inTo);
       }else
-    /****************************************************************
-    ** Peticiones Get para selección de rangos con relaciones.
-    *****************************************************************/
+    /********************************************************************
+     ** 14) Con select con rangos con tablas relacionadas.
+     ********************************************************************/
       if (isset($_GET["rel"]) && isset($_GET["type"])
         && $table == "relations" && isset($_GET["linkTo"])
         && isset($_GET["betweenIn"]) && isset($_GET["betweenOut"])) {
