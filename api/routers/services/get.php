@@ -20,7 +20,7 @@
       if (!isset($_GET["orderBy"]) && !isset($_GET["orderMode"])
         && !isset($_GET["startAt"]) && !isset($_GET["endAt"])
         && !isset($_GET["linkTo"]) && !isset($_GET["equalTo"]) ) {
-        $response -> getData(table, $select, $orderBy,
+        $response -> getData($table, $select, $orderBy,
             $orderMode, $startAt, $endAt);
       } else
     /***************************************
