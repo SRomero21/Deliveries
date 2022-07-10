@@ -5,7 +5,7 @@
     ********************************/
     static public function infoDatabase(){
       $infoDB = array(
-        "database" => "delivery",
+        "database" => "deliveries",
         "user" => "root",
         "pass" => ""
       );
