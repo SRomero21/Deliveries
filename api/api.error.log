@@ -1,0 +1,7 @@
+[10-Jul-2022 04:07:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "table" in C:\xampp\htdocs\Deliveries\api\routers\services\get.php:23
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(25): include()
+#1 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#3 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\get.php on line 23
