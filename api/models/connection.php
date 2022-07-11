@@ -34,10 +34,10 @@
         /*****************************************
         ** traer el nombre la columnas de la DB
         ******************************************/
-          $validate =  Connection::Connect()
+          $validate = Connection::Connect()
             ->query("SELECT COLUMN_NAME AS item
-                    FROM information_schema.columns
-                    WHERE table_schema ='$database' AND table_name = '$table'")
+                    FROM information_schema.columns WHERE table_schema ='$database'
+                    AND table_name = '$table'")
             ->fetchAll(PDO::FETCH_OBJ);
         /**********************************************
         ** Validación de la existencia de la tabla.
@@ -48,7 +48,7 @@
             /*******************************
              ** Validación select = *
              *******************************/
-              if($columns[0]=="*"){
+              if($columns[0] == "*"){
                 array_shift($columns);
               }
             /***************************************************

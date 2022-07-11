@@ -18,6 +18,7 @@
    ** Petición en la api
   ********************************/
   if (count($arrayRouters) == 2 && isset($_SERVER['REQUEST_METHOD'])){
+    $table=explode("?",$arrayRouters[2])[0];
     /*******************************
     ** Petición GET
     ********************************/
@@ -25,14 +26,10 @@
       include "services/get.php";
     }
     /*******************************
-    ** Petición POST
-    ********************************/
+     ** Petición POST
+     ********************************/
     if ($_SERVER['REQUEST_METHOD']=='POST'){
-          $json = array(
-            "status" => 201,
-            "detalle" => "Petición POST"
-          );
-          echo json_encode($json, http_response_code($json["status"]));
+      include "services/post.php";
     }
     /*******************************
     ** Petición PUT
