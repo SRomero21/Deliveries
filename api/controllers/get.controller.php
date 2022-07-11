@@ -32,7 +32,7 @@
         $return->fncResponse($response,"getRelData");
       }
     /*************************************************************
-     ** Petición Get con filtros con tablas relacionadas.
+     ** Petición Get con tablas relacionadas con filtros .
      *************************************************************/
       static public function getRelDataFilter($rel, $type,
         $select, $linkTo, $equalTo, $orderBy, $orderMode,

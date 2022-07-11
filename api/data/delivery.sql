@@ -75,6 +75,10 @@ INSERT INTO `products` (`id_product`, `id_user_product`, `name_product`, `descri
 (1, 1, 'laptop', 'laptop', 100, 1500, '2022-07-06 15:56:04', '2022-07-07 23:05:09'),
 (2, 3, 'teclado', 'teclado', 100, 25, '2022-07-05 15:56:04', '2022-07-06 16:00:33'),
 (3, 2, 'raton', 'raton', 12, 15, '2022-07-05 20:41:07', '2022-07-07 22:24:08');
+INSERT INTO `products` (`id_user_product`, `name_product`, `description_product`, `cantidad_product`, `precio_product`, `date_create_product`, `date_update_product`) VALUES
+(3, 'laptop', 'laptop', 100, 1500, '2022-07-06 15:56:04', '2022-07-07 23:05:09'),
+(2.'teclado', 'teclado', 100, 25, '2022-07-05 15:56:04', '2022-07-06 16:00:33'),
+(1, 'raton', 'raton', 12, 15, '2022-07-05 20:41:07', '2022-07-07 22:24:08');
 
 -- --------------------------------------------------------
 
