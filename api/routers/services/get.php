@@ -28,8 +28,9 @@
     /****************************************
      ** 01) Con select.
      ****************************************/
-      if ($table!="relations"
-      && !isset($_GET["searchTo"]) && !isset($_GET["equalTo"])) {
+      if ($table!="relations" && !isset($_GET["searchTo"])
+        && !isset($_GET["equalTo"]) && !isset($_GET["betweenIn"])
+        && !isset($_GET["betweenOut"])) {
         $response -> getData($table, $select, $orderBy,
             $orderMode, $startAt, $endAt);
       } else
@@ -51,6 +52,16 @@
                     $orderBy, $orderMode, $startAt, $endAt);
       }else
     /*************************************************************
+     ** 13) Con select con rangos
+     *************************************************************/
+      if ($table != "relations" && !isset($_GET["rel"]) && !isset($_GET["type"])
+        && isset($_GET["linkTo"]) && isset($_GET["betweenIn"])
+        && isset($_GET["betweenOut"])) {
+        $response->getDataRange($table, $select, $linkTo, $betweenIn,
+                  $betweenOut, $orderBy, $orderMode, $startAt,
+                  $endAt, $filterTo, $inTo);
+      }else
+    /*************************************************************
      ** 04) Con select con tablas relacionadas.
      *************************************************************/
       if($table=="relations" && isset($_GET["rel"]) && isset($_GET["type"])
@@ -67,7 +78,7 @@
                       $equalTo, $orderBy, $orderMode, $startAt, $endAt);
       }else
     /***************************************************************
-     ** 12) Con select con buscador con tablas relacionadas.
+     ** 12) Con select con tablas relacionadas  con buscador.
      ***************************************************************/
       if ($table == "relations" && isset($_GET["rel"])
         && isset($_GET["type"]) && isset($_GET["linkTo"])
@@ -75,32 +86,21 @@
         $response->getRelDataSearch($rel, $type, $select, $linkTo,
                     $searchTo, $orderBy, $orderMode, $startAt, $endAt);
       }else
-    /*************************************************************
-     ** 13) Con select con rangos.
-     *************************************************************/
-      // if ($table != "relations" && !isset($_GET["rel"]) && !isset($_GET["type"])
-      //   && isset($_GET["linkTo"]) && isset($_GET["betweenIn"])
-      //   && isset($_GET["betweenOut"])) {
-      //   $response->getDataRange($table, $select,
-      //       $_GET["linkTo"], $_GET["betweenIn"],
-      //       $_GET["betweenOut"], $orderBy,
-      //       $orderMode, $startAt, $endAt, $filterTo, $inTo);
-      // }else
     /********************************************************************
-     ** 14) Con select con rangos con tablas relacionadas.
+     ** 14) Con select con tablas relacionadas con rangos .
      ********************************************************************/
-      // if ($table == "relations" && isset($_GET["rel"]) && isset($_GET["type"])
-      //   && isset($_GET["linkTo"]) && isset($_GET["betweenIn"]) && isset($_GET["betweenOut"])){
-      //   $response->getRelDataRange($_GET["rel"],$_GET["type"],
-      //       $select, $_GET["linkTo"], $_GET["betweenIn"],
-      //       $_GET["betweenOut"], $orderBy, $orderMode,
-      //       $startAt, $endAt, $filterTo, $inTo);
-      {
-        $json = array(
+      if ($table == "relations" && isset($_GET["rel"]) && isset($_GET["type"])
+        && isset($_GET["linkTo"]) && isset($_GET["betweenIn"])
+        && isset($_GET["betweenOut"])){
+        $response->getRelDataRange($rel, $type, $select, $linkTo,
+                    $betweenIn, $betweenOut, $orderBy, $orderMode,
+                    $startAt, $endAt, $filterTo, $inTo);
+        }else{
+          $json = array(
           "status" => 404,
-          "detalle" => "not found...",
-          "method" => "faltan Parámetros"
-        );
-        echo json_encode($json, http_response_code($json["status"]));
+            "detalle" => "not found...",
+            "method" => "faltan Parámetros",
+          );
+          echo json_encode($json, http_response_code($json["status"]));
       }
 ?>
