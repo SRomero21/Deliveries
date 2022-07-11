@@ -1,7 +1,13 @@
 <?php
-  class RouterController{
-    public function index(){
-      include "routers/router.php";
+  /*****************************
+   *todo Controller ROUTER
+   ****************************/
+    class RouterController{
+      /************************
+       ** Index
+       ***********************/
+        public function index(){
+          include "routers/router.php";
+        }
     }
-  }
 ?>

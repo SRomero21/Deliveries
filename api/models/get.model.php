@@ -1,13 +1,13 @@
 <?php
   /****************************************
-   * GET Modelo.
+   *todo GET Modelo.
    ****************************************/
     /****************************************
      *! Requerimientos.
     ****************************************/
       require_once "connection.php";
     /****************************************
-     *? Clase GET modulo.
+     *? Class GET model.
      ****************************************/
       class GetModel{
         /********************************
@@ -27,7 +27,7 @@
             ********************************/
               $sql= "SELECT $select FROM $table";
             /**********************************
-             *? Con select con ordenes
+             *? Con select con orden
             **********************************/
               if($orderBy!=null && $orderMode!=null
                 && $startAt==null && $endAt==null){
