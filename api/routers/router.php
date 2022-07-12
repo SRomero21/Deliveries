@@ -41,11 +41,7 @@
     ** Petición DELETE
     ********************************/
     if ($_SERVER['REQUEST_METHOD']=='DELETE'){
-      $json = array(
-        "status" => 200,
-        "detalle" => "Petición DELETE"
-      );
-      echo json_encode($json, http_response_code($json["status"]));
+      include "services/delete.php";
     }
   }
 ?>
