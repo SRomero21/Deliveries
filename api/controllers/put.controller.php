@@ -30,7 +30,7 @@
                     $json = array(
                         "status" => 404,
                         "detalle" => "not found...",
-                        "method" => "GET-".$method
+                        "method" => "PUT-".$method
                     );
                     }
                     echo json_encode($json, http_response_code($json["status"]));

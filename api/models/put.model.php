@@ -6,6 +6,7 @@
          *! Requerimientos.
         ****************************************/
             require_once "connection.php";
+            require_once "get.model.php";
         /****************************************
          *? ClasS PUT model.
          ****************************************/
@@ -14,6 +15,14 @@
                  ** Petición Put para editar datos.
                  ******************************************/
                     static public function putData($table, $data, $id, $nameId){
+                        /************************************
+                         *? Validación del ID
+                         ************************************/
+                            $response=GetModel::getDataFilter($table, $nameId,
+                            $nameId, $id, null, null, null, null);
+                            if(empty($response)){
+                                return null;
+                            }
                         /************************************
                          *? Armado de variables
                          ************************************/
@@ -45,10 +54,10 @@
                          *? Ejecutar sentencia sql.
                         ********************************/
                             if($stmt->execute()){
-                                $json = array(
+                                $response = array(
                                     "comment" => "The process was successful"
                                 );
-                                return $json;
+                                return $response;
                             }else{
                                 return $link->errorInfo();
                             }

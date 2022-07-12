@@ -29,6 +29,8 @@
                         foreach(array_keys($data) as $key => $value){
                             array_push($columns,$value);
                         }
+                        array_push($columns,$_GET["nameId"]);
+                        $columns=array_unique($columns);
                         if (empty(Connection::getColumnsData($table, $columns))){
                             $json = array(
                                 "status" => 400,
