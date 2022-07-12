@@ -12,8 +12,6 @@
              ********************************/
                 static public function postData($table,$data){
                     $response = PostModel::postData($table,$data);
-                    echo '<pre> r=';print_r($response);echo '</pre>';
-                    return;
                     $return = new PostController();
                     $return -> fncResponse($response,"postData");
                 }
@@ -23,7 +21,7 @@
                 public function fncResponse($response,$method){
                     if(!empty($response)){
                     $json = array(
-                        "status" => 200,
+                        "status" => 201,
                         "method" => "GET-".$method,
                         "total" => count($response),
                         "detalle" => $response

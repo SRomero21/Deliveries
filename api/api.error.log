@@ -238,3 +238,64 @@ Stack trace:
 [11-Jul-2022 09:31:06 Europe/Berlin] PHP Warning:  Undefined variable $responde in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php on line 15
 [11-Jul-2022 09:32:09 Europe/Berlin] PHP Warning:  Undefined variable $responde in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php on line 15
 [11-Jul-2022 09:33:12 Europe/Berlin] PHP Warning:  Undefined variable $responde in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php on line 15
+[12-Jul-2022 03:04:33 Europe/Berlin] PHP Warning:  Undefined variable $sparams in C:\xampp\htdocs\Deliveries\api\models\post.model.php on line 30
+[12-Jul-2022 03:26:02 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(` id_user_product, name_product, description_product, image_product, amount_...' at line 1 in C:\xampp\htdocs\Deliveries\api\models\post.model.php:50
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\post.model.php(50): PDOStatement->execute()
+#1 C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php(14): PostModel::postData('products', Array)
+#2 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(35): PostController::postData('products', Array)
+#3 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\post.model.php on line 50
+[12-Jul-2022 03:26:45 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '( id_user_product, name_product, description_product, image_product, amount_p...' at line 1 in C:\xampp\htdocs\Deliveries\api\models\post.model.php:48
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\post.model.php(48): PDOStatement->execute()
+#1 C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php(14): PostModel::postData('products', Array)
+#2 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(35): PostController::postData('products', Array)
+#3 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\post.model.php on line 48
+[12-Jul-2022 03:41:13 Europe/Berlin] PHP Warning:  Undefined variable $link in C:\xampp\htdocs\Deliveries\api\models\post.model.php on line 51
+[12-Jul-2022 03:41:13 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function lastInsertId() on null in C:\xampp\htdocs\Deliveries\api\models\post.model.php:51
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php(14): PostModel::postData('products', Array)
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(35): PostController::postData('products', Array)
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\post.model.php on line 51
+[12-Jul-2022 03:46:44 Europe/Berlin] PHP Warning:  Undefined variable $response in C:\xampp\htdocs\Deliveries\api\models\post.model.php on line 55
+[12-Jul-2022 03:46:44 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in C:\xampp\htdocs\Deliveries\api\models\post.model.php:55
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php(14): PostModel::postData('products', Array)
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(35): PostController::postData('products', Array)
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\post.model.php on line 55
+[12-Jul-2022 03:47:09 Europe/Berlin] PHP Warning:  Undefined variable $response in C:\xampp\htdocs\Deliveries\api\models\post.model.php on line 55
+[12-Jul-2022 03:47:09 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in C:\xampp\htdocs\Deliveries\api\models\post.model.php:55
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php(14): PostModel::postData('products', Array)
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(35): PostController::postData('products', Array)
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\post.model.php on line 55
+[12-Jul-2022 03:47:10 Europe/Berlin] PHP Warning:  Undefined variable $response in C:\xampp\htdocs\Deliveries\api\models\post.model.php on line 55
+[12-Jul-2022 03:47:10 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in C:\xampp\htdocs\Deliveries\api\models\post.model.php:55
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php(14): PostModel::postData('products', Array)
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(35): PostController::postData('products', Array)
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\post.model.php on line 55
