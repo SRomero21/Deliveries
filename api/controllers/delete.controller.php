@@ -7,19 +7,11 @@
      *todo Class Controller delete
      ******************************/
         class DeleteController{
-            /********************************************************
-             ** Petición DELETE para actualizar el estado.
-             ********************************************************/
-                // static public function deleteData($table, $data, $id, $nameId){
-                //     $response = DeleteModel::deleteData($table, $data, $id, $nameId);
-                //     $return = new DeleteController();
-                //     $return -> fncResponse($response,"deleteData");
-                // }
             /********************************************
-             ** Petición DELETE para borrar datos.
+             ** Petición DELETE.
              ********************************************/
-                static public function deleteData($table, $id, $nameId){
-                    $response = DeleteModel::deleteData($table, $id, $nameId);
+                static public function deleteData($table, $data, $id, $nameId){
+                    $response = DeleteModel::deleteData($table, $data, $id, $nameId);
                     $return = new DeleteController();
                     $return -> fncResponse($response,"deleteData");
                 }
