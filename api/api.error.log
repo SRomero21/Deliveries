@@ -1,0 +1,81 @@
+[12-Jul-2022 09:21:46 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:22:10 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:23:22 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:24:48 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:24:48 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:25:16 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:28:55 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:28:55 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:31:45 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59

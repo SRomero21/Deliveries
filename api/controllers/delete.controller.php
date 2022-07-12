@@ -3,15 +3,23 @@
      *! Requerimientos.
      ************************/
         require_once "models/delete.model.php";
-    /**************************************
-     *todo Class Controller DELETE
-     **************************************/
+    /******************************
+     *todo Class Controller delete
+     ******************************/
         class DeleteController{
-            /*********************************************
-             ** Petición Delete para borrar datos.
-             *********************************************/
-                static public function deleteData($table,$data){
-                    $response = DeleteModel::deleteData($table,$data);
+            /********************************************************
+             ** Petición DELETE para actualizar el estado.
+             ********************************************************/
+                // static public function deleteData($table, $data, $id, $nameId){
+                //     $response = DeleteModel::deleteData($table, $data, $id, $nameId);
+                //     $return = new DeleteController();
+                //     $return -> fncResponse($response,"deleteData");
+                // }
+            /********************************************
+             ** Petición DELETE para borrar datos.
+             ********************************************/
+                static public function deleteData($table, $id, $nameId){
+                    $response = DeleteModel::deleteData($table, $id, $nameId);
                     $return = new DeleteController();
                     $return -> fncResponse($response,"deleteData");
                 }
@@ -22,7 +30,7 @@
                     if(!empty($response)){
                     $json = array(
                         "status" => 200,
-                        "method" => "delete-".$method,
+                        "method" => $method,
                         "total" => count($response),
                         "detalle" => $response
                     );
@@ -30,7 +38,7 @@
                     $json = array(
                         "status" => 404,
                         "detalle" => "not found...",
-                        "method" => "GET-".$method
+                        "method" => $method
                     );
                     }
                     echo json_encode($json, http_response_code($json["status"]));

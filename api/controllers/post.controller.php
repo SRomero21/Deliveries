@@ -22,7 +22,7 @@
                     if(!empty($response)){
                     $json = array(
                         "status" => 201,
-                        "method" => "POST-".$method,
+                        "method" => $method,
                         "total" => count($response),
                         "detalle" => $response
                     );
@@ -30,7 +30,7 @@
                     $json = array(
                         "status" => 404,
                         "detalle" => "not found...",
-                        "method" => "GET-".$method
+                        "method" => $method
                     );
                     }
                     echo json_encode($json, http_response_code($json["status"]));

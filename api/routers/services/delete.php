@@ -10,29 +10,62 @@
         /********************************************
          *? Variables
         ********************************************/
+            //$data=array();
             $columns=array();
-            $response = new deleteController();
-        /********************************************
-         *? Validar la tabla y columnas
-         ********************************************/
-            if(isset($_POST)){
-                foreach(array_keys($_POST) as $key => $value){
-                    array_push($columns, $value);
-                }
+            $id=$_GET["id"]?? null;
+            $nameId=$_GET["nameId"]?? null;
+            $response = new DeleteController();
+            $return = new DeleteController();
+        /***************************************************************
+         *? Validando variables de DELETE para actualizar el estado.
+         ***************************************************************/
+            // if(isset($_GET["id"]) && isset($_GET["nameId"])){
+                /********************************************
+                 *? Capturar los datos del formulario
+                 ********************************************/
+                //parse_str(file_get_contents('php://input'), $data);
+                /********************************************
+                 *? Validar la tabla y columnas
+                    ********************************************/
+                    // foreach(array_keys($data) as $key => $value){
+                    //     array_push($columns,$value);
+                    // }
+                    // array_push($columns,$_GET["nameId"]);
+                    // $columns=array_unique($columns);
+                    // if (empty(Connection::getColumnsData($table, $columns))){
+                    //     $return -> fncResponse(null,"deleteData");
+                    // }else{
+                    //     /***********************************************************************************
+                    //      *? solicitud de repuestas del controlador para birlara datos en cualquier tabla
+                    //     ***********************************************************************************/
+                    //         //$response->deleteData($table, $data, $id, $nameId);
+                    //         $response->deleteData($table, $id, $nameId);
+                    // }
+        /******************************************************
+         *? Validando variables de DELETE para registro.
+         ******************************************************/
+            if(isset($_GET["id"]) && isset($_GET["nameId"])){
+                /********************************************
+                 *? Capturar los datos del formulario
+                 ********************************************/
+                //parse_str(file_get_contents('php://input'), $data);
+                /********************************************
+                 *? Validar la tabla y columnas
+                    ********************************************/
+                    $columns=array($_GET["nameId"]);
+                    // foreach(array_keys($data) as $key => $value){
+                    //     array_push($columns,$value);
+                    // }
+                    // array_push($columns,$_GET["nameId"]);
+                    // $columns=array_unique($columns);
+                    if (empty(Connection::getColumnsData($table, $columns))){
+                        $return -> fncResponse(null,"deleteData");
+                    }else{
+                        /***********************************************************************************
+                         *? solicitud de repuestas del controlador para birlara datos en cualquier tabla
+                        ***********************************************************************************/
+                            //$response->deleteData($table, $data, $id, $nameId);
+                            $response->deleteData($table, $id, $nameId);
+                    }
             }
-            if (empty(Connection::getColumnsData($table, $columns))){
-                $json = array(
-                    "status" => 400,
-                    "detalle" => "Error: Fields in the form not match the database",
-                    "method" => "POST",
-                );
-                echo json_encode($json, http_response_code($json["status"]));
-                return;
-            }else{
-                /***********************************************************************************
-                 *? solicitud de repuestas del controlador para crear datos en cualquier tabla
-                 ***********************************************************************************/
-                    $response->deleteData($table, $_POST);
-            }
-
 ?>
