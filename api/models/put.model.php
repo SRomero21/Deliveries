@@ -1,37 +1,34 @@
 <?php
     /****************************************
-     *todo Post Model.
+     *todo Put Model.
      ****************************************/
         /****************************************
          *! Requerimientos.
         ****************************************/
             require_once "connection.php";
         /****************************************
-         *? ClasS POST model.
+         *? ClasS PUT model.
          ****************************************/
-            class PostModel{
-                /*****************************************
-                 ** Petición Post para crear datos.
-                 *****************************************/
-                    static public function postData($table, $data){
+            class PutModel{
+                /******************************************
+                 ** Petición Put para editar datos.
+                 ******************************************/
+                    static public function putData($table, $data, $id, $nameId){
                         /************************************
                          *? Armado de variables
                          ************************************/
-                            $columns="";
-                            $params="";
+                            $set="";
                         /************************************
                          *? Arando columnas y parámetros.
                          ************************************/
                             foreach($data as $key => $value){
-                                $columns.=" ".$key.",";
-                                $params.= " :".$key.",";
+                                $set.=" ".$key." = :".$key.",";
                             }
-                            $columns = substr($columns, 0, -1);
-                            $params = substr($params, 0, -1);
+                            $set = substr($set, 0, -1);
                         /********************************
                          *? Armando sentencia sql
                          ********************************/
-                            $sql = "INSERT INTO $table ($columns) VALUES ($params)";
+                            $sql = "UPDATE $table SET $set WHERE $nameId = :$nameId";
                         /********************************
                          *? Contención con sql
                          ********************************/
@@ -41,16 +38,16 @@
                          *? Armado los parámetros.
                         ********************************/
                             foreach ($data as $key => $value){
-                            $stmt -> bindParam(":".$key, $data[$key], PDO::PARAM_STR);
+                                $stmt -> bindParam(":".$key, $data[$key], PDO::PARAM_STR);
                             }
+                            $stmt -> bindParam(":".$nameId, $id, PDO::PARAM_STR);
                         /********************************
                          *? Ejecutar sentencia sql.
                         ********************************/
                             if($stmt->execute()){
                                 $json = array(
-                                                "lastId" => $link->lastInsertId(),
-                                                "comment"=>"The process was successful"
-                                            );
+                                    "comment" => "The process was successful"
+                                );
                                 return $json;
                             }else{
                                 return $link->errorInfo();

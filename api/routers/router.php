@@ -35,11 +35,7 @@
     ** Petición PUT
     ********************************/
     if ($_SERVER['REQUEST_METHOD']=='PUT'){
-        $json = array(
-          "status" => 200,
-          "detalle" => "Petición PUT"
-        );
-        echo json_encode($json, http_response_code($json["status"]));
+      include "services/put.php";
     }
     /*******************************
     ** Petición DELETE

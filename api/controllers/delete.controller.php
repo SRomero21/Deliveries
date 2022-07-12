@@ -2,18 +2,18 @@
     /************************
      *! Requerimientos.
      ************************/
-        require_once "models/post.model.php";
-    /******************************
-     *todo Class Controller POST
-     ******************************/
-        class PostController{
-            /****************************************
-             ** Petición Post para crear datos.
-             ****************************************/
-                static public function postData($table,$data){
-                    $response = PostModel::postData($table,$data);
-                    $return = new PostController();
-                    $return -> fncResponse($response,"postData");
+        require_once "models/delete.model.php";
+    /**************************************
+     *todo Class Controller DELETE
+     **************************************/
+        class DeleteController{
+            /*********************************************
+             ** Petición Delete para borrar datos.
+             *********************************************/
+                static public function deleteData($table,$data){
+                    $response = DeleteModel::deleteData($table,$data);
+                    $return = new DeleteController();
+                    $return -> fncResponse($response,"deleteData");
                 }
             /*******************************
              ** Respuesta del controlador
@@ -21,8 +21,8 @@
                 public function fncResponse($response,$method){
                     if(!empty($response)){
                     $json = array(
-                        "status" => 201,
-                        "method" => "POST-".$method,
+                        "status" => 200,
+                        "method" => "delete-".$method,
                         "total" => count($response),
                         "detalle" => $response
                     );

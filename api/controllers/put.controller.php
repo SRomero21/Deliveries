@@ -2,18 +2,18 @@
     /************************
      *! Requerimientos.
      ************************/
-        require_once "models/post.model.php";
+        require_once "models/put.model.php";
     /******************************
-     *todo Class Controller POST
+     *todo Class Controller PUT
      ******************************/
-        class PostController{
-            /****************************************
-             ** Petición Post para crear datos.
-             ****************************************/
-                static public function postData($table,$data){
-                    $response = PostModel::postData($table,$data);
-                    $return = new PostController();
-                    $return -> fncResponse($response,"postData");
+        class PutController{
+            /********************************************
+             ** Petición Put para editar datos.
+             ********************************************/
+                static public function putData($table, $data, $id, $nameId){
+                    $response = PutModel::putData($table, $data, $id, $nameId);
+                    $return = new PutController();
+                    $return -> fncResponse($response,"putData");
                 }
             /*******************************
              ** Respuesta del controlador
@@ -21,8 +21,8 @@
                 public function fncResponse($response,$method){
                     if(!empty($response)){
                     $json = array(
-                        "status" => 201,
-                        "method" => "POST-".$method,
+                        "status" => 200,
+                        "method" => "PUT-".$method,
                         "total" => count($response),
                         "detalle" => $response
                     );

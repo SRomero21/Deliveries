@@ -1,19 +1,19 @@
 <?php
     /****************************************
-     *todo Post Model.
+     *todo DELETE Model.
      ****************************************/
         /****************************************
          *! Requerimientos.
         ****************************************/
             require_once "connection.php";
         /****************************************
-         *? ClasS POST model.
+         *? ClasS DELETE model.
          ****************************************/
-            class PostModel{
-                /*****************************************
-                 ** Petición Post para crear datos.
-                 *****************************************/
-                    static public function postData($table, $data){
+            class DeleteModel{
+                /*********************************************
+                 ** Petición Delete para borrar datos.
+                 *********************************************/
+                    static public function deleteData($table, $data){
                         /************************************
                          *? Armado de variables
                          ************************************/
