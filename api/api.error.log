@@ -1,240 +1,155 @@
-[11-Jul-2022 06:48:22 Europe/Berlin] PHP Warning:  Undefined variable $columns in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 19
-[11-Jul-2022 06:48:22 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 51
-[11-Jul-2022 06:48:22 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
+[12-Jul-2022 09:21:46 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
 Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', NULL)
-#1 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(19): Connection::getColumnsData('products', NULL)
-#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
-#4 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
 #5 {main}
   thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 07:15:12 Europe/Berlin] PHP Warning:  require_once(../models/connection.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 8
-[11-Jul-2022 07:15:12 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required '../models/connection.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Deliveries\api\routers\services\post.php:8
+[12-Jul-2022 09:22:10 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
 Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include()
-#1 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
-#3 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 8
-[11-Jul-2022 07:16:23 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: print_r(): Argument #2 ($return) must be of type bool, array given in C:\xampp\htdocs\Deliveries\api\routers\services\post.php:19
-Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(19): print_r('COLUMNS = ', Array)
-#1 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
-#4 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 19
-[11-Jul-2022 07:16:43 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: print_r(): Argument #2 ($return) must be of type bool, array given in C:\xampp\htdocs\Deliveries\api\routers\services\post.php:19
-Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(19): print_r('COLUMNS = ', Array)
-#1 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
-#4 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 19
-[11-Jul-2022 07:17:37 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: print_r(): Argument #2 ($return) must be of type bool, array given in C:\xampp\htdocs\Deliveries\api\routers\services\post.php:19
-Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(19): print_r('columns = ', Array)
-#1 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
-#4 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 19
-[11-Jul-2022 07:19:45 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: print_r(): Argument #2 ($return) must be of type bool, array given in C:\xampp\htdocs\Deliveries\api\routers\services\post.php:19
-Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(19): print_r('columns = ', Array)
-#1 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
-#4 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 19
-[11-Jul-2022 07:41:35 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'products' in 'where clause' in C:\xampp\htdocs\Deliveries\api\models\connection.php:38
-Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(38): PDO->query('SELECT COLUMN_N...')
-#1 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(20): Connection::getColumnsData('products', Array)
-#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
-#4 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
 #5 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 38
-[11-Jul-2022 07:41:36 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'products' in 'where clause' in C:\xampp\htdocs\Deliveries\api\models\connection.php:38
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:23:22 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
 Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(38): PDO->query('SELECT COLUMN_N...')
-#1 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(20): Connection::getColumnsData('products', Array)
-#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
-#4 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
 #5 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 38
-[11-Jul-2022 07:43:51 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: print_r(): Argument #2 ($return) must be of type bool, array given in C:\xampp\htdocs\Deliveries\api\models\connection.php:42
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:24:48 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
 Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(42): print_r('v 0 ', Array)
-#1 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(20): Connection::getColumnsData('products', Array)
-#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
-#4 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
 #5 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 42
-[11-Jul-2022 07:55:10 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_push(): Argument #1 ($array) must be of type array, null given in C:\xampp\htdocs\Deliveries\api\routers\services\post.php:15
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:24:48 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
 Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(15): array_push(NULL, 'id_product')
-#1 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(4): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
-#4 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 15
-[11-Jul-2022 08:10:09 Europe/Berlin] PHP Warning:  Undefined variable $sum in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 60
-[11-Jul-2022 08:33:14 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 60
-[11-Jul-2022 08:33:14 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 60
-[11-Jul-2022 08:33:14 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 60
-[11-Jul-2022 08:33:14 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 60
-[11-Jul-2022 08:33:14 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 60
-[11-Jul-2022 08:33:14 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 60
-[11-Jul-2022 08:33:14 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 60
-[11-Jul-2022 08:33:14 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 60
-[11-Jul-2022 08:33:14 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 60
-[11-Jul-2022 08:33:14 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 60
-[11-Jul-2022 08:33:50 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:33:50 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:33:50 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:33:50 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:33:50 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:33:50 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:33:50 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:33:50 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:33:50 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:33:50 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:34:40 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:34:40 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:34:40 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:34:40 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:34:40 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:34:40 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:34:40 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:34:40 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:34:40 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 08:34:40 Europe/Berlin] PHP Warning:  Undefined variable $aux in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
-[11-Jul-2022 09:06:50 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostController" not found in C:\xampp\htdocs\Deliveries\api\routers\services\post.php:33
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:25:16 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
 Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include()
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:28:55 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:28:55 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 09:31:45 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in C:\xampp\htdocs\Deliveries\api\models\connection.php:59
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\models\connection.php(59): in_array('id_product', 'id_product')
+#1 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(36): Connection::getColumnsData('products', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 59
+[12-Jul-2022 10:00:26 Europe/Berlin] PHP Warning:  Undefined variable $dta in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php on line 27
+[12-Jul-2022 10:03:16 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "=" in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php on line 27
+[12-Jul-2022 10:08:01 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function empy() in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php:28
+Stack trace:
+#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include()
 #1 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#2 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
 #3 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 33
-[11-Jul-2022 09:06:55 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostController" not found in C:\xampp\htdocs\Deliveries\api\routers\services\post.php:33
+  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php on line 28
+[12-Jul-2022 10:08:03 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function empy() in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php:28
 Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include()
+#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include()
 #1 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#2 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
 #3 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 33
-[11-Jul-2022 09:06:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostController" not found in C:\xampp\htdocs\Deliveries\api\routers\services\post.php:33
+  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php on line 28
+[12-Jul-2022 10:08:38 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function empy() in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php:28
 Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include()
+#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include()
 #1 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#2 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
 #3 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 33
-[11-Jul-2022 09:14:57 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostController" not found in C:\xampp\htdocs\Deliveries\api\routers\services\post.php:33
+  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php on line 28
+[12-Jul-2022 10:08:38 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function empy() in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php:28
 Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include()
+#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include()
 #1 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#2 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
 #3 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 33
-[11-Jul-2022 09:14:58 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostController" not found in C:\xampp\htdocs\Deliveries\api\routers\services\post.php:33
+  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php on line 28
+[12-Jul-2022 10:08:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function empy() in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php:28
 Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include()
+#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include()
 #1 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#2 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
 #3 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 33
-[11-Jul-2022 09:16:49 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostController" not found in C:\xampp\htdocs\Deliveries\api\routers\services\post.php:13
+  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php on line 28
+[12-Jul-2022 10:08:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function empy() in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php:28
 Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include()
+#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include()
 #1 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#2 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
 #3 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 13
-[11-Jul-2022 09:19:40 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostController" not found in C:\xampp\htdocs\Deliveries\api\routers\services\post.php:13
+  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php on line 28
+[12-Jul-2022 10:08:47 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function empy() in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php:28
 Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include()
+#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include()
 #1 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#2 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
 #3 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 13
-[11-Jul-2022 09:19:41 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostController" not found in C:\xampp\htdocs\Deliveries\api\routers\services\post.php:13
+  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php on line 28
+[12-Jul-2022 10:13:29 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 51
+[12-Jul-2022 10:13:31 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\Deliveries\api\models\connection.php on line 51
+[12-Jul-2022 10:18:29 Europe/Berlin] PHP Parse error:  syntax error, unexpected single-quoted string "<pre>" in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php on line 51
+[12-Jul-2022 10:19:23 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "data" in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php:51
 Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include()
+#0 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include()
 #1 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
+#2 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
 #3 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\post.php on line 13
-[11-Jul-2022 09:20:55 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostModel" not found in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php:14
+  thrown in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php on line 51
+[12-Jul-2022 10:19:36 Europe/Berlin] PHP Warning:  Attempt to read property "key" on null in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php on line 51
+[12-Jul-2022 10:29:52 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\Deliveries\api\routers\services\delete.php on line 36
+[12-Jul-2022 11:01:04 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id_product = '4'' at line 1 in C:\xampp\htdocs\Deliveries\api\models\put.model.php:56
 Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(35): PostController::postData('products', Array)
-#1 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
-#4 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php on line 14
-[11-Jul-2022 09:20:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostModel" not found in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php:14
-Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(35): PostController::postData('products', Array)
-#1 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
-#4 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php on line 14
-[11-Jul-2022 09:22:26 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostModel" not found in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php:14
-Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(35): PostController::postData('products', Array)
-#1 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
-#4 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php on line 14
-[11-Jul-2022 09:22:26 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostModel" not found in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php:14
-Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(35): PostController::postData('products', Array)
-#1 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
-#4 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php on line 14
-[11-Jul-2022 09:23:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostModel" not found in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php:14
-Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(35): PostController::postData('products', Array)
-#1 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
-#4 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php on line 14
-[11-Jul-2022 09:23:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostModel" not found in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php:14
-Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(35): PostController::postData('products', Array)
-#1 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\index.php(13): RouterController->index()
-#4 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php on line 14
-[11-Jul-2022 09:29:11 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostModel" not found in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php:14
-Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(35): PostController::postData('products', Array)
-#1 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
-#4 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php on line 14
-[11-Jul-2022 09:29:12 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostModel" not found in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php:14
-Stack trace:
-#0 C:\xampp\htdocs\Deliveries\api\routers\services\post.php(35): PostController::postData('products', Array)
-#1 C:\xampp\htdocs\Deliveries\api\routers\router.php(32): include('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
-#3 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
-#4 {main}
-  thrown in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php on line 14
-[11-Jul-2022 09:31:06 Europe/Berlin] PHP Warning:  Undefined variable $responde in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php on line 15
-[11-Jul-2022 09:32:09 Europe/Berlin] PHP Warning:  Undefined variable $responde in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php on line 15
-[11-Jul-2022 09:33:12 Europe/Berlin] PHP Warning:  Undefined variable $responde in C:\xampp\htdocs\Deliveries\api\controllers\post.controller.php on line 15
+#0 C:\xampp\htdocs\Deliveries\api\models\put.model.php(56): PDOStatement->execute()
+#1 C:\xampp\htdocs\Deliveries\api\models\delete.model.php(62): PutModel::putData('products', Array, '4', 'id_product')
+#2 C:\xampp\htdocs\Deliveries\api\controllers\delete.controller.php(14): DeleteModel::deleteData('products', Array, '4', 'id_product')
+#3 C:\xampp\htdocs\Deliveries\api\routers\services\delete.php(53): DeleteController::deleteData('products', Array, '4', 'id_product')
+#4 C:\xampp\htdocs\Deliveries\api\routers\router.php(44): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Deliveries\api\controllers\router.controller.php(10): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Deliveries\api\index.php(16): RouterController->index()
+#7 {main}
+  thrown in C:\xampp\htdocs\Deliveries\api\models\put.model.php on line 56
